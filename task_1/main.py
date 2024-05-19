@@ -11,9 +11,10 @@
 # Задание
 # 1. Реализовать сбор уникальных записей
 # 2. Случается, что под одиннаковым id присутствуют разные данные - собрать отдельно такие записи
+from typing import Dict, List, Tuple
 
 
-def read_csv(file_path):
+def read_csv(file_path: str) -> List[str]:
     records = []
     with open(file_path, 'r', encoding='utf-8') as file:
         next(file)
@@ -24,9 +25,10 @@ def read_csv(file_path):
     return (records)
 
 
-def transform_records(records):
-    unique_records = {}
-    duplicate_records = {}
+def transform_records(records: List[List[str]]) -> Tuple[
+        Dict[str, List[str]], Dict[str, List[List[str]]]]:
+    unique_records: Dict[str, List[str]] = {}
+    duplicate_records: Dict[str, List[str]] = {}
 
     for record in records:
         id = record[-1]

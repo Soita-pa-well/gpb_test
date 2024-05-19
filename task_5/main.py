@@ -29,17 +29,19 @@
 # Программа выводит:
 # стыковкабала
 # стыковкарась
+from typing import List
 
-def read_words(file_path):
+
+def read_words(file_path: str) -> List[str]:
     with open(file_path, 'r') as file:
-        words = [line.strip() for line in file]
+        words: List[str] = [line.strip() for line in file]
     return words
 
 
-def get_user_input(file_path):
-    words = read_words(file_path)
+def get_user_input(file_path: str) -> str:
+    words: List[str] = read_words(file_path)
     while True:
-        word = input(f'Введите слово из файла {file_path}: ').strip()
+        word: str = input(f'Введите слово из файла {file_path}: ').strip()
         if word in words:
             return word
         else:
@@ -47,9 +49,9 @@ def get_user_input(file_path):
 
 
 def words_transformation(path):
-    res = []
-    word = get_user_input(path)
-    words_list = read_words(path)
+    res: List = []
+    word: str = get_user_input(path)
+    words_list: List[str] = read_words(path)
 
     for w in words_list:
         if w == word:

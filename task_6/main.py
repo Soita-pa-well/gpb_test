@@ -23,13 +23,21 @@
 # 		"load_dt" -> значение "сейчас"(датавремя)
 
 import requests
+import datetime
+import time
 
 
-def get_info():
-    url = 'https://api.gazprombank.ru/very/important/docs?documents_date/'
+def get_data():
+    now = datetime.datetime.now()
+    start_of_day = datetime.datetime(now.year, now.month, now.day)
+    timestamp = int(time.mktime(start_of_day.timetuple()))
+    print(timestamp)
+    url = f'https://api.gazprombank.ru/very/important/docs?documents_date={timestamp}'
     response = requests.get(url)
+    response.raise_for_status()
     return response.json()
 
 
 
 
+print(get_data())
