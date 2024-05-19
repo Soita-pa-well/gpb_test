@@ -6,7 +6,7 @@ import datetime
 from main import delete_files
 
 
-class TestDeleteFiles(unittest.TestCase):
+class TestTask_4(unittest.TestCase):
 
     @patch('main.os.listdir')
     @patch('main.os.path.isfile')
