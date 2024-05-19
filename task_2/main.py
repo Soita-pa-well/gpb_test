@@ -28,7 +28,10 @@ def tuple_trasformation(digits_list: List[Set[int]]) -> Tuple[Set[int]]:
 
 if __name__ == '__main__':
     m = [{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]
-    print(count_digits(m))
-    print(sum_digits(m))
-    print(digits_average_value(m))
-    print(tuple_trasformation(m))
+    print(f'Количество чисел в коллекции: {count_digits(m)}')
+    print(f'Результат сложения чисел в коллекции: {sum_digits(m)}')
+    print(f'Cреднее значение чисел в коллекции: {digits_average_value(m)}')
+    print(
+        f'Результат превращения коллекции в структуру данных '
+        f'{type(tuple_trasformation(m))}: {tuple_trasformation(m)}'
+    )

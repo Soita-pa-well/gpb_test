@@ -15,4 +15,4 @@ def dict_transformation(digits_list: List[List[int]]) -> List[Dict[str, int]]:
 
 if __name__ == '__main__':
     a = [[1, 2, 3], [4, 5, 6]]
-    print(dict_transformation(a))
+    print(f'Резудьтат превращения коллекции: {dict_transformation(a)}')
